@@ -2,71 +2,8 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>test</title>
-    <style>
-	#div1{ width: 300px; height: 300px; border-radius: 50%; border: 1px solid #000; position: relative; top: 100px; left: 100px;}
-	#div1 span{ width: 50px; height: 50px; border-radius: 50%; background: red; position: absolute; left: 50%; margin-left: -25px; top: 0; margin-top: -25px;}
-    </style>
-    <script>
-    function d2a (n) {
-    	return n*Math.PI/180;
-    }
-    window.onload=function  () {
-    	var oDiv=document.getElementById('div1');
-
-    	var r=oDiv.offsetWidth/2;
-
-		var bSign=true;
-
-		var N=10;
-		for (var i = 0; i < N; i++) {
-    		var oSpan=document.createElement('span');
-    		/*var a=360/N*i;
-
-    		var x=r+Math.sin(d2a(a))*r;
-    		var y=r-Math.cos(d2a(a))*r;
-    		oSpan.style.left=x+'px';
-    		oSpan.style.top=y+'px';*/
-    		oDiv.appendChild(oSpan);
-		};
-		var aSpan=document.getElementsByTagName('span');
-		document.onclick=function  () {
-			if (bSign) {
-				for (var i = 0; i < aSpan.length; i++) {
-					var a=360/N*i;
-					startMove2(aSpan[i],a);
-				};
-			}else{
-				for (var i = 0; i < aSpan.length; i++) {
-					startMove2(aSpan[i],0);
-				};
-			};
-			bSign=!bSign;
-		}
-    	function startMove2 (obj,iTarget) {
-    		obj.a=obj.a || 0;
-    		clearInterval(obj.timer);
-    		obj.timer=setInterval(function () {
-    			var iSpeed=(iTarget-obj.a)/10;
-    			iSpeed=iSpeed>0?Math.ceil(iSpeed):Math.floor(iSpeed);
-
-    			if (obj.a==iTarget) {
-    				clearInterval(obj.timer);
-    				//obj.a=0;
-    			}else{
-    				obj.a+=iSpeed;
-    				var x=r+Math.sin(d2a(obj.a))*r;
-    				var y=r-Math.cos(d2a(obj.a))*r;
-    				obj.style.left=x+'px';
-    				obj.style.top=y+'px';
-    			};
-    		},30)
-    	}
-    }
-    </script>
+    <title>Hello World</title>
 </head>
 <body>
-	<div id="div1">
-	</div>
 </body>
 </html>
